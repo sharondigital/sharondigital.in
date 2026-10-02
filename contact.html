@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Contact | Sharon Digital</title>
+<link href="assets/style.css" rel="stylesheet"/>
+<style>
+
+/* =========================================================
+   CONTACT PAGE — SMALL PREMIUM IMPROVEMENTS
+   Existing Sharon Digital Theme Preserved
+========================================================= */
+
+/* Entire contact card is clickable */
+.contactCardLink {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Contact cards */
+.contactCard {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.contactCard:hover {
+  transform: translateY(-5px);
+  border-color: #c9c9c2;
+  box-shadow: 0 18px 40px rgba(0,0,0,.10);
+}
+
+/* Description inside contact cards */
+.contactCard p {
+  margin: 0 0 22px;
+  color: #777;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* Keep email clean */
+.emailAddress {
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Keep button at bottom */
+.contactCard .btn {
+  margin-top: auto;
+}
+
+/* Social icons */
+.socialIcon {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease,
+    color .25s ease;
+}
+
+.socialIcon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+/* WhatsApp */
+.socialIcon.whatsapp:hover {
+  color: #25D366 !important;
+  border-color: #25D366 !important;
+}
+
+/* Instagram */
+.socialIcon.instagram:hover {
+  color: #E1306C !important;
+  border-color: #E1306C !important;
+}
+
+/* Facebook */
+.socialIcon.facebook:hover {
+  color: #1877F2 !important;
+  border-color: #1877F2 !important;
+}
+
+/* Email */
+.socialIcon.mail:hover {
+  color: var(--gold2) !important;
+  border-color: var(--gold2) !important;
+}
+
+/* Mobile email */
+@media (max-width:800px) {
+
+  .emailAddress {
+    font-size: 26px;
+  }
+
+}
+
+/* Small phones */
+@media (max-width:500px) {
+
+  .emailAddress {
+    font-size: 23px;
+  }
+
+}
+
+
+/* =========================================================
+   CONTACT PAGE — PREMIUM POLISH
+   Keeps the existing Sharon Digital theme
+========================================================= */
+
+.contactHero .ownerCard {
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.contactHero .ownerCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 28px 70px rgba(0,0,0,.14);
+  border-color: #c9c9c2;
+}
+
+.ownerInfo {
+  position: relative;
+}
+
+.ownerInfo::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 3px;
+  margin-top: 16px;
+  background: var(--red);
+}
+
+.ownerTrust {
+  margin: 14px 0 0 !important;
+  color: #777 !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.ownerAvailable {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  color: #555;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.ownerAvailable::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #20c65a;
+  box-shadow: 0 0 0 4px rgba(32,198,90,.10);
+}
+
+.contactIntro p {
+  margin: -2px auto 0;
+  max-width: 520px;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.contactPage .contactCards {
+  gap: 18px;
+}
+
+.contactPage .contactCard {
+  min-height: 245px;
+  padding: 28px 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactPage .contactCard::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: var(--red);
+  transition: width .3s ease;
+}
+
+.contactPage .contactCard:hover::after {
+  width: 100%;
+}
+
+.contactCardTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contactCardIcon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--red);
+}
+
+.contactCardIcon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.contactPage .contactCard h3 {
+  margin: 14px 0 10px;
+}
+
+.contactPage .contactCard p {
+  margin: 0 0 20px;
+}
+
+.contactPage .emailAddress {
+  font-size: 22px !important;
+  line-height: 1.2;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+.contactPage .contactCard .btn {
+  margin-top: auto;
+}
+
+.contactPage .socialRow {
+  margin-top: 34px;
+}
+
+.contactPage .socialIcon {
+  min-height: 62px;
+  background: #fff !important;
+}
+
+.contactPage .socialIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 800px) {
+  .contactPage .contactCard {
+    min-height: 225px;
+  }
+
+  .contactIntro p {
+    padding: 0 20px;
+  }
+}
+</style>
+</head>
+<body>
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+<header class="nav">
+<a class="brand" href="index.html">
+<img alt="Sharon Digital Logo" src="assets/images/logo.png"/>
+<span>
+
+      SHARON <b>DIGITAL</b>
+<small>
+        ADVERTISING AND MARKETING
+      </small>
+</span>
+</a>
+<button class="menu">
+    ☰
+  </button>
+<nav>
+<a href="index.html">
+      Home
+    </a>
+<a href="services.html">
+      Services
+    </a>
+<a href="portfolio.html">
+      Portfolio
+    </a>
+<a href="enquiry.html">
+      Enquiry
+    </a>
+<a class="active" href="contact.html">
+      Contact
+    </a>
+</nav>
+</header>
+<!-- =========================================================
+     MAIN
+========================================================= -->
+<main class="contactPage">
+<!-- =======================================================
+       CONTACT HERO
+  ======================================================== -->
+<section class="contactHero owner-style">
+  <div class="ownerVisual">
+    <div class="ownerImage">
+      <img src="assets/images/owner.png" alt="Mr. Sahayaraj Francis A - Founder and Owner of Sharon Digital">
+    </div>
+  </div>
+
+  <div class="ownerStory">
+    <span class="eyebrow red">FOUNDER / OWNER</span>
+    <h1>MR. SAHAYARAJ<br><strong>FRANCIS A</strong></h1>
+    <p class="ownerCompany">Sharon Digital Advertising &amp; Marketing</p>
+    <p class="ownerTrust">21+ YEARS OF EXPERIENCE</p>
+    <div class="ownerDivider"></div>
+    <p class="ownerDescription">Direct contact with the founder for project discussions, enquiries and creative requirements — backed by more than two decades of practical advertising and printing experience.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://wa.me/919361418749" rel="noopener noreferrer" target="_blank">Chat on WhatsApp</a>
+      <a class="btn blackBtn" href="mailto:sharondigitalvallioor@gmail.com">Send Email</a>
+    </div>
+  </div>
+</section>
+
+<section class="talk-about-me">
+  <div class="talk-about-inner">
+    <div>
+      <span class="eyebrow red">TALK ABOUT ME</span>
+      <h2>EXPERIENCE THAT<br><strong>UNDERSTANDS THE WORK.</strong></h2>
+    </div>
+    <div class="talk-copy">
+      <p>For 21+ years, Sharon Digital has focused on turning everyday business requirements into clear, practical and professional creative work — from printing and branding to advertising, digital marketing and technology.</p>
+      <p>My approach is simple: understand the requirement, keep the communication direct, and deliver work that looks premium while remaining useful for the business.</p>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+       DIRECT CONTACT
+  ========================================================== -->
+<section class="contactDetails section">
+<!-- SECTION TITLE -->
+<div class="contactIntro">
+<span class="eyebrow red">
+        DIRECT CONTACT
+      </span>
+<h2>
+        CONNECT WITH <strong>US.</strong>
+</h2>
+<p>One message is all it takes to get started.</p></div>
+<!-- =====================================================
+         CONTACT CARDS
+    ====================================================== -->
+<div class="contactCards">
+<!-- ===================================================
+           WHATSAPP CARD
+      ==================================================== -->
+<a class="contactCard whiteCard contactCardLink" href="https://wa.me/919361418749" rel="noopener noreferrer" target="_blank"><div class="contactCardTop"><span class="contactCardIcon"><svg aria-hidden="true" fill="none" viewbox="0 0 24 24"><path d="M20 11.8a8.1 8.1 0 0 1-11.9 7.1L4 20l1.2-4A8.1 8.1 0 1 1 20 11.8Z" stroke="currentColor" stroke-width="1.8"></path><path d="M8.4 8.4c.2-.4.5-.4.8-.4h.5c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.5.6c.7 1.2 1.6 2 2.8 2.7l.6-.6c.2-.2.4-.2.7-.1l1.4.6c.3.1.4.3.4.6v.5c0 .3-.1.6-.4.8-.4.3-1 .5-1.5.4-1.6-.3-3.2-1.2-4.5-2.5-1.3-1.3-2.2-2.8-2.5-4.5-.1-.5.1-1.1.4-1.5Z" fill="currentColor"></path></svg></span><span>
+          WHATSAPP
+        </span></div>
+
+<h3>
+          +91 93614 18749
+        </h3>
+<p>
+          Quick enquiries and project discussions
+          directly with us.
+        </p>
+<span class="btn primary">
+          Message Us →
+        </span>
+</a>
+<!-- ===================================================
+           EMAIL CARD
+      ==================================================== -->
+<a class="contactCard whiteCard contactCardLink" href="mailto:sharondigitalvallioor@gmail.com"><div class="contactCardTop"><span class="contactCardIcon"><svg aria-hidden="true" fill="none" viewbox="0 0 24 24"><rect height="14" rx="2" stroke="currentColor" stroke-width="1.8" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.8"></path></svg></span><span>
+          EMAIL
+        </span></div>
+
+<h3 class="emailAddress">
+          sharondigitalvallioor@gmail.com
+        </h3>
+<p>
+          Send your requirements and project details
+          directly by email.
+        </p>
+<span class="btn blackBtn">
+          Send Email →
+        </span>
+</a>
+<!-- ===================================================
+           LOCATION CARD
+      ==================================================== -->
+<a class="contactCard whiteCard contactCardLink" href="https://maps.app.goo.gl/Qqenus5BVyPi4F2UA?g_st=ic" rel="noopener noreferrer" target="_blank"><div class="contactCardTop"><span class="contactCardIcon"><svg aria-hidden="true" fill="none" viewbox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" stroke="currentColor" stroke-width="1.8"></path><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"></circle></svg></span><span>
+          LOCATION
+        </span></div>
+
+<h3>
+          Vallioor, Tamil Nadu
+        </h3>
+<p>
+          Find our location and get directions
+          through Google Maps.
+        </p>
+<span class="btn blackBtn">
+          Open Maps →
+        </span>
+</a>
+</div>
+<!-- =========================================================
+         SOCIAL LINKS
+    ========================================================== -->
+<div class="socialRow">
+  <a aria-label="Chat on WhatsApp" class="socialIcon whatsapp" href="https://wa.me/919361418749" rel="noopener noreferrer" target="_blank">
+    <img src="assets/images/whatsapp-logo.png" alt="WhatsApp">
+    <span>WhatsApp</span>
+  </a>
+  <a aria-label="Instagram" class="socialIcon instagram" href="https://www.instagram.com/sharondigital_in" rel="noopener noreferrer" target="_blank">
+    <img src="assets/images/instagram-logo.png" alt="Instagram">
+    <span>Instagram</span>
+  </a>
+  <a aria-label="Facebook" class="socialIcon facebook" href="https://www.facebook.com/francis.sahayaraj" rel="noopener noreferrer" target="_blank">
+    <img src="assets/images/facebook-logo.png" alt="Facebook">
+    <span>Facebook</span>
+  </a>
+  <a aria-label="Send email" class="socialIcon mail" href="mailto:sharondigitalvallioor@gmail.com">
+    <img src="assets/images/gmail-logo.png" alt="Email">
+    <span>Email</span>
+  </a>
+</div>
+</section>
+</main>
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="site-footer premium-reference-footer">
+  <div class="footer-main">
+    <div class="footer-about">
+      <a class="footer-brand" href="index.html" aria-label="Sharon Digital Home">
+        <img src="assets/images/logo.png" alt="Sharon Digital logo">
+        <div>
+          <b>SHARON <span>DIGITAL</span></b>
+          <small>ADVERTISING &amp; MARKETING</small>
+        </div>
+      </a>
+
+      <p>PREMIUM QUALITY. AFFORDABLE PRICES.</p>
+    </div>
+
+    <nav class="reference-footer-nav" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="enquiry.html">Enquiry</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="reference-footer-social">
+      <a aria-label="Instagram" href="https://www.instagram.com/sharondigital_in" target="_blank" rel="noopener noreferrer">
+        <img src="assets/images/instagram-logo.png" alt="Instagram">
+      </a>
+      <a aria-label="Facebook" href="https://www.facebook.com/francis.sahayaraj" target="_blank" rel="noopener noreferrer">
+        <img src="assets/images/facebook-logo.png" alt="Facebook">
+      </a>
+      <a aria-label="Send email" href="mailto:sharondigitalvallioor@gmail.com">
+        <img src="assets/images/gmail-logo.png" alt="Email">
+      </a>
+      <a aria-label="Chat on WhatsApp" href="https://wa.me/919361418749" target="_blank" rel="noopener noreferrer">
+        <img src="assets/images/whatsapp-logo.png" alt="WhatsApp">
+      </a>
+    </div>
+
+    <div class="footer-bottom">
+      <small>© 2026 Sharon Digital Advertising and Marketing. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+<!-- =========================================================
+     FLOATING WHATSAPP
+========================================================= -->
+<a class="floatWA" href="https://wa.me/919361418749?text=Hi%20Sharon%20Digital%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <span class="floatWA-icon" aria-hidden="true"><img src="assets/images/whatsapp-logo.png" alt=""></span>
+  <span class="floatWA-label">Chat on WhatsApp</span>
+</a>
+<script src="assets/app.js"></script>
+</body>
+</html>

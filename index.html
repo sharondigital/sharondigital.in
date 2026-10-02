@@ -1,0 +1,1414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sharon Digital Advertising and Marketing — premium printing, advertising, digital marketing, web and app development.">
+<title>Sharon Digital | Advertising & Marketing</title>
+<link rel="stylesheet" href="assets/style.css">
+
+<style>
+
+/* =========================================================
+   HOME HERO — MERGED FROM CLAUDE HERO REFERENCE
+   Only the first/home hero is changed. Existing site pages
+   remain on the current Sharon Digital system.
+========================================================= */
+.home-page{
+  --home-paper:#f4f1e9;
+  --home-paper-2:#ebe7de;
+  --home-ink:#120a0b;
+  --home-muted:#6d6862;
+  --home-red:#ed1c24;
+  background:var(--home-paper);
+  color:var(--home-ink);
+}
+.home-page .nav{
+  background:rgba(244,241,233,.92);
+  border-bottom:1px solid rgba(18,10,11,.10);
+  backdrop-filter:blur(16px) saturate(135%);
+}
+.home-page .nav .brand span{color:var(--home-ink)!important;font-weight:800}
+.home-page .nav .brand b{color:var(--home-red)!important}
+.home-page .nav .brand small{color:#FFFFFF!important}
+.home-page .nav nav a{color:var(--home-ink)}
+.home-page .nav nav a.active,.home-page .nav nav a:hover{color:var(--home-red)}
+.home-page .nav nav a.active:after{background:var(--home-red)}
+
+.home-page .home-hero{
+  position:relative;
+  min-height:calc(100svh - 78px);
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  isolation:isolate;
+  background:linear-gradient(180deg,var(--home-paper),var(--home-paper-2));
+}
+.home-page .home-hero .halftone{
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  opacity:.72;
+  background-image:radial-gradient(rgba(18,10,11,.075) 1px,transparent 1.35px);
+  background-size:8px 8px;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 18%,#000 78%,transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0%,#000 18%,#000 78%,transparent 100%);
+}
+.home-page .home-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-3;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 78% 44%,rgba(237,28,36,.045),transparent 24%),
+    radial-gradient(circle at 20% 18%,rgba(255,255,255,.60),transparent 25%),
+    linear-gradient(115deg,rgba(255,255,255,.28),transparent 55%);
+}
+.home-page .home-hero::after{
+  content:"";
+  position:absolute;
+  width:42vw;height:42vw;
+  right:-18vw;bottom:-24vw;
+  border-radius:50%;
+  border:1px solid rgba(18,10,11,.045);
+  box-shadow:0 0 0 35px rgba(18,10,11,.018),0 0 0 70px rgba(18,10,11,.012);
+  z-index:-1;
+  pointer-events:none;
+}
+.home-page .home-hero-layout{
+  width:min(1500px,90vw);
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;
+  gap:40px;
+  position:relative;
+  z-index:2;
+  padding:40px 0;
+}
+.home-page .home-hero-layout::before,
+.home-page .home-hero-layout::after{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  color:rgba(18,10,11,.055);
+}
+.home-page .home-hero-layout::before{
+  width:32px;height:32px;
+  left:-6px;top:1%;
+  border:1px solid currentColor;
+  border-radius:50%;
+  box-shadow:0 0 0 12px transparent;
+}
+.home-page .home-hero-layout::after{
+  width:1px;height:90%;
+  right:12%;
+  top:5%;
+  background:linear-gradient(transparent,currentColor,transparent);
+}
+.home-page .home-copy{position:relative;z-index:3}
+.home-page .home-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  padding:8px 13px 8px 9px;
+  border:1px solid rgba(18,10,11,.14);
+  border-radius:999px;
+  background:rgba(255,253,249,.82);
+  color:#6c665f;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.home-page .home-badge .regmark{
+  width:24px;height:24px;
+  border:1.3px solid var(--home-red);
+  border-radius:50%;
+  position:relative;
+  flex:0 0 auto;
+}
+.home-page .home-badge .regmark::before,
+.home-page .home-badge .regmark::after{
+  content:"";position:absolute;background:var(--home-red);
+}
+.home-page .home-badge .regmark::before{left:50%;top:-6px;bottom:-6px;width:1px;transform:translateX(-50%)}
+.home-page .home-badge .regmark::after{top:50%;left:-6px;right:-6px;height:1px;transform:translateY(-50%)}
+
+.home-page .home-title{
+  margin:28px 0 0;
+  max-width:760px;
+  color:var(--home-ink);
+  font-family:Inter,Arial,sans-serif;
+  font-size:clamp(55px,6.2vw,100px);
+  line-height:.89;
+  letter-spacing:-.055em;
+  font-weight:900;
+  text-transform:uppercase;
+}
+.home-page .home-title .line{display:block;white-space:nowrap}
+.home-page .home-title .stamp{
+  display:inline-block;
+  margin-top:6px;
+  padding:6px 18px 11px;
+  background:var(--home-red);
+  color:#fff;
+  transform:rotate(-1.05deg);
+  box-shadow:0 16px 28px rgba(237,28,36,.12);
+}
+.home-page .home-description{
+  max-width:560px;
+  margin:30px 0 0;
+  color:var(--home-muted);
+  font-size:16px;
+  line-height:1.7;
+  font-weight:500;
+}
+.home-page .home-hero .actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:32px;
+}
+.home-page .home-hero .actions .btn{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:14px 24px;
+  border-radius:999px;
+  font-family:Inter,Arial,sans-serif;
+  font-size:14px;
+  font-weight:700;
+  border:1px solid transparent;
+  overflow:hidden;
+  transition:transform .3s cubic-bezier(.16,.84,.32,1),box-shadow .3s ease,border-color .3s ease;
+}
+.home-page .home-hero .actions .btn.primary{
+  color:#fff;
+  background:var(--home-red);
+  box-shadow:0 12px 24px rgba(237,28,36,.16);
+}
+.home-page .home-hero .actions .btn.primary:hover{transform:translateY(-2px);box-shadow:0 18px 32px rgba(237,28,36,.22)}
+.home-page .home-hero .actions .btn.ghost{
+  color:var(--home-ink);
+  background:rgba(255,253,249,.55);
+  border-color:rgba(18,10,11,.16);
+}
+.home-page .home-hero .actions .btn.ghost:hover{transform:translateY(-2px);border-color:var(--home-ink)}
+
+.home-page .home-hero .home-stats{
+  display:flex;
+  gap:0;
+  margin-top:42px;
+}
+.home-page .home-hero .home-stat{
+  padding-right:28px;
+  margin-right:28px;
+  border-right:1px solid rgba(18,10,11,.13);
+}
+.home-page .home-hero .home-stat:last-child{border-right:0;margin-right:0;padding-right:0}
+.home-page .home-hero .home-stat strong{
+  display:block;
+  font-family:Inter,Arial,sans-serif;
+  font-size:30px;
+  line-height:1;
+  font-weight:800;
+  color:var(--home-ink);
+}
+.home-page .home-hero .home-stat span{
+  display:block;
+  margin-top:7px;
+  color:#706a64;
+  font-size:10.5px;
+  line-height:1.3;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+
+.home-page .home-visual{
+  position:relative;
+  display:grid;
+  place-items:center;
+  min-height:510px;
+}
+.home-page .home-visual-plate{
+  display:none !important;
+}
+.home-page .home-visual-plate::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.55;
+  background-image:radial-gradient(rgba(244,241,233,.13) 1px,transparent 1.35px);
+  background-size:10px 10px;
+}
+.home-page .home-visual-ring{
+  position:absolute;
+  width:63%;
+  aspect-ratio:1/1;
+  border:1px dashed rgba(18,10,11,.25);
+  border-radius:50%;
+  animation:sd-home-ring 28s linear infinite;
+}
+@keyframes sd-home-ring{to{transform:rotate(360deg)}}
+.home-page .home-dino{
+  position:relative;
+  z-index:3;
+  width:min(96%,570px);
+  filter:drop-shadow(0 28px 34px rgba(18,10,11,.25));
+  animation:sd-home-dino 5.8s ease-in-out infinite;
+}
+@keyframes sd-home-dino{
+  0%,100%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(0,-7px,0)}
+}
+.home-page .home-reg{
+  position:absolute;
+  width:34px;height:34px;
+  border:1.3px solid var(--home-red);
+  border-radius:50%;
+  color:var(--home-red);
+  z-index:4;
+}
+.home-page .home-reg::before,
+.home-page .home-reg::after{
+  content:"";position:absolute;background:currentColor;
+}
+.home-page .home-reg::before{left:50%;top:-8px;bottom:-8px;width:1px;transform:translateX(-50%)}
+.home-page .home-reg::after{top:50%;left:-8px;right:-8px;height:1px;transform:translateY(-50%)}
+.home-page .home-reg.r1{top:6%;left:2%}
+.home-page .home-reg.r2{bottom:8%;right:0}
+.home-page .home-scroll{
+  position:absolute;
+  left:5vw;
+  bottom:20px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#77716a;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.home-page .home-scroll i{
+  width:1px;height:34px;
+  background:linear-gradient(var(--home-ink),transparent);
+  position:relative;overflow:hidden;
+}
+.home-page .home-scroll i::after{
+  content:"";position:absolute;top:-34px;left:0;width:100%;height:100%;
+  background:var(--home-red);
+  animation:sd-home-scroll 2.2s ease-in-out infinite;
+}
+@keyframes sd-home-scroll{0%{transform:translateY(0)}100%{transform:translateY(68px)}}
+
+/* Home intro / trust section */
+.home-page .home-intro{
+  padding:120px 7vw 110px;
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  gap:70px;
+  background:var(--home-paper);
+  position:relative;
+  overflow:hidden;
+}
+.home-page .home-intro::before{
+  content:"21+";
+  position:absolute;
+  right:-2vw;
+  bottom:-8vw;
+  font:900 clamp(180px,26vw,420px)/.8 Inter,Arial,sans-serif;
+  letter-spacing:-.08em;
+  color:rgba(18,10,11,.035);
+  pointer-events:none;
+}
+.home-page .home-intro h2{
+  margin:18px 0 0;
+  max-width:760px;
+  color:var(--home-ink);
+  font:900 clamp(44px,5.1vw,82px)/.92 Inter,Arial,sans-serif;
+  letter-spacing:-.055em;
+  text-transform:uppercase;
+}
+.home-page .home-intro h2 strong{color:var(--home-red)}
+.home-page .home-intro-copy{position:relative;z-index:2;align-self:center}
+.home-page .home-intro-copy p{
+  max-width:680px;
+  margin:0 0 22px;
+  color:#67615b;
+  font-size:16px;
+  line-height:1.8;
+}
+.home-page .home-intro-list{display:flex;flex-direction:column;gap:12px;margin-top:26px}
+.home-page .home-intro-list li{
+  display:flex;align-items:center;gap:11px;
+  color:var(--home-ink);font-size:14px;font-weight:700;
+}
+.home-page .home-intro-list li i{
+  width:8px;height:8px;border-radius:50%;background:var(--home-red);flex:0 0 auto;
+}
+.home-page .home-trust-strip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(18,10,11,.12);
+  margin-top:45px;
+  padding-top:28px;
+  gap:18px;
+}
+.home-page .home-trust-strip strong{display:block;font-size:28px;font-weight:900;letter-spacing:-.04em}
+.home-page .home-trust-strip span{display:block;margin-top:5px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#756e67}
+.home-page .home-section-head h2,
+.home-page .home-cta h2{
+  font-family:Inter,Arial,sans-serif;
+  font-weight:900;
+  letter-spacing:-.055em;
+}
+.home-page .home-services{background:#ece8df}
+.home-page .home-services .home-feature-card h3{font-family:Inter,Arial,sans-serif;font-weight:800}
+
+@media (max-width:1000px){
+  .home-page .home-hero-layout{grid-template-columns:1fr;gap:20px}
+  .home-page .home-copy{padding-top:30px}
+  .home-page .home-visual{min-height:430px;order:2}
+  .home-page .home-title{font-size:clamp(54px,9vw,86px)}
+  .home-page .home-intro{grid-template-columns:1fr;gap:25px}
+  .home-page .home-trust-strip{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .home-page .home-hero{min-height:calc(100svh - 76px)}
+  .home-page .home-hero-layout{width:88vw;padding:34px 0 60px}
+  .home-page .home-title{font-size:clamp(42px,12.8vw,72px);letter-spacing:-.06em}
+  .home-page .home-title .line{white-space:normal}
+  .home-page .home-description{font-size:14px}
+  .home-page .home-hero .actions{flex-direction:column;align-items:stretch}
+  .home-page .home-hero .actions .btn{width:100%}
+  .home-page .home-hero .home-stats{flex-wrap:wrap;gap:18px 0}
+  .home-page .home-hero .home-stat{min-width:33%;padding-right:12px;margin-right:12px}
+  .home-page .home-hero .home-stat strong{font-size:24px}
+  .home-page .home-hero .home-stat span{font-size:8px}
+  .home-page .home-visual{min-height:360px}
+  .home-page .home-visual-plate{width:94%;border-radius:22px}
+  .home-page .home-dino{width:108%}
+  .home-page .home-scroll{display:none}
+  .home-page .home-trust-strip{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .home-page .home-visual-ring,
+  .home-page .home-dino,
+  .home-page .home-scroll i::after{animation:none!important}
+}
+
+</style>
+
+<style>
+/* =========================================================
+   HOME END CARD — MATCH REFERENCE LAYOUT
+   ========================================================= */
+.home-page .premium-reference-footer {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 530px !important;
+  box-sizing: border-box !important;
+  padding: 116px 24px 54px !important;
+  margin: 0 !important;
+  background: #0b0708 !important;
+  color: #f5f5f5 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  text-align: center !important;
+}
+
+.home-page .premium-reference-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    rgba(255,255,255,.075) 1px,
+    transparent 1.35px
+  );
+  background-size: 9px 9px;
+  opacity: .48;
+}
+
+.home-page .premium-reference-footer .footer-main {
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0 !important;
+}
+
+.home-page .premium-reference-footer .footer-about {
+  max-width: none !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.home-page .premium-reference-footer .footer-brand {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 13px !important;
+  margin: 0 0 38px !important;
+  padding: 0 !important;
+  text-decoration: none !important;
+}
+
+.home-page .premium-reference-footer .footer-brand img {
+  width: 58px !important;
+  height: 58px !important;
+  object-fit: contain !important;
+}
+
+.home-page .premium-reference-footer .footer-brand b {
+  display: block !important;
+  color: #f5f5f5 !important;
+  font-size: 21px !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+  letter-spacing: -.02em !important;
+  text-align: left !important;
+}
+
+.home-page .premium-reference-footer .footer-brand b span {
+  color: #ed1c24 !important;
+}
+
+.home-page .premium-reference-footer .footer-brand small {
+  display: block !important;
+  margin-top: 6px !important;
+  color: #a6a6a6 !important;
+  font-size: 10px !important;
+  line-height: 1 !important;
+  font-weight: 700 !important;
+  letter-spacing: .14em !important;
+  text-align: left !important;
+}
+
+.home-page .premium-reference-footer .footer-about > p {
+  margin: 0 0 38px !important;
+  max-width: none !important;
+  color: #f5f5f5 !important;
+  font-size: clamp(29px, 3vw, 43px) !important;
+  line-height: 1.12 !important;
+  font-weight: 800 !important;
+  letter-spacing: -.035em !important;
+  text-transform: uppercase !important;
+}
+
+.home-page .premium-reference-footer .reference-footer-nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 34px !important;
+  margin: 0 0 34px !important;
+  padding: 0 !important;
+}
+
+.home-page .premium-reference-footer .reference-footer-nav a {
+  color: #a6a09d !important;
+  font-size: 15px !important;
+  line-height: 1 !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: color .25s ease !important;
+}
+
+.home-page .premium-reference-footer .reference-footer-nav a:hover {
+  color: #f5f5f5 !important;
+}
+
+.home-page .premium-reference-footer .reference-footer-social {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  margin: 0 0 42px !important;
+}
+
+.home-page .premium-reference-footer .reference-footer-social a {
+  width: 52px !important;
+  height: 52px !important;
+  box-sizing: border-box !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  overflow: hidden !important;
+}
+
+.home-page .premium-reference-footer .reference-footer-social img {
+  width: 24px !important;
+  height: 24px !important;
+  object-fit: contain !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+.home-page .premium-reference-footer .reference-footer-social a:hover {
+  border-color: rgba(255,255,255,.38) !important;
+}
+
+.home-page .premium-reference-footer .footer-bottom {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.home-page .premium-reference-footer .footer-bottom small {
+  color: #817b78 !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+  font-weight: 500 !important;
+}
+
+.home-page .premium-reference-footer .footer-links-col,
+.home-page .premium-reference-footer .footer-contact-col {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  .home-page .premium-reference-footer {
+    min-height: 500px !important;
+    padding: 82px 18px 38px !important;
+  }
+
+  .home-page .premium-reference-footer .footer-about > p {
+    max-width: 340px !important;
+    font-size: 27px !important;
+  }
+
+  .home-page .premium-reference-footer .reference-footer-nav {
+    gap: 18px !important;
+    flex-wrap: wrap !important;
+    max-width: 340px !important;
+  }
+
+  .home-page .premium-reference-footer .reference-footer-nav a {
+    font-size: 13px !important;
+  }
+
+  .home-page .premium-reference-footer .footer-bottom small {
+    font-size: 11px !important;
+  }
+}
+</style>
+
+</head>
+
+<body class="home-page">
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="Sharon Digital Home">
+    <img src="assets/images/logo.png" alt="Sharon Digital logo">
+    <span>SHARON <b>DIGITAL</b><small>ADVERTISING AND MARKETING</small></span>
+  </a>
+
+  <button class="menu" aria-label="Open navigation menu">☰</button>
+
+  <nav aria-label="Primary navigation">
+    <a class="active" href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+
+</header>
+
+<main>
+  <section class="home-hero" aria-label="Sharon Digital introduction">
+    <div class="halftone"></div>
+    <div class="home-hero-layout">
+      <div class="home-copy">
+        <span class="home-badge"><span class="regmark"></span> 21+ Years in Advertising &amp; Marketing</span>
+
+        <h1 class="home-title">
+          <span class="line">Print better.</span>
+          <span class="line stamp">Advertise smarter.</span>
+          <span class="line">Grow bigger.</span>
+        </h1>
+
+        <p class="home-description">
+          Complete printing, advertising, digital marketing and technology solutions for brands that want to stand out.
+        </p>
+
+        <div class="actions">
+          <a class="btn primary" href="services.html"><span>Explore Services</span></a>
+          <a class="btn ghost" href="enquiry.html"><span>Get an Enquiry</span></a>
+        </div>
+
+        <div class="home-stats" aria-label="Company statistics">
+          <div class="home-stat"><strong>21+</strong><span>Years of Experience</span></div>
+          <div class="home-stat"><strong>1M+</strong><span>Clients</span></div>
+          <div class="home-stat"><strong>100+</strong><span>Trusted by Leading Brands</span></div>
+        </div>
+      </div>
+
+      <div class="home-visual" aria-hidden="true">
+        <div class="home-visual-plate"></div>
+        <div class="home-visual-ring"></div>
+        <span class="regmark home-reg r1"></span>
+        <span class="regmark home-reg r2"></span>
+        <img class="home-dino" src="assets/images/dino-home.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="home-intro">
+    <div>
+      <span class="eyebrow red">21+ YEARS • SHARON DIGITAL</span>
+      <h2>BUILT ON EXPERIENCE.<br><strong>TRUSTED TO DELIVER.</strong></h2>
+    </div>
+    <div class="home-intro-copy">
+      <p>
+        For more than 21 years, Sharon Digital has helped businesses, institutions and brands turn ideas into print, advertising, branding and digital work that gets noticed.
+      </p>
+      <p>
+        From Vallioor to businesses across South Tamil Nadu, we bring practical thinking, dependable production and creative execution together under one roof — built for brands that expect more.
+      </p>
+      <ul class="home-intro-list">
+        <li><i></i>21+ years of hands-on industry experience</li>
+        <li><i></i>A long-standing creative partner across South Tamil Nadu</li>
+        <li><i></i>Print, advertising, branding and digital under one roof</li>
+      </ul>
+      <div class="home-trust-strip" aria-label="Sharon Digital experience highlights">
+        <div><strong>360°</strong><span>Creative Solutions</span></div>
+        <div><strong>Premium</strong><span>Quality and Afforable Pricing</span></div>
+        <div><strong>South TN's</strong><span>Biggest Advertising Company</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-services">
+    <div class="home-section-head">
+      <div>
+        <span class="eyebrow red">EXPLORE OUR SERVICES</span>
+        <h2>BUILT AROUND YOUR <strong>BUSINESS.</strong></h2>
+      </div>
+      <a class="home-text-link" href="services.html">View all services →</a>
+    </div>
+
+    <div class="home-featured-grid">
+      <a class="home-feature-card" href="services.html#digital-flex">
+        <img src="assets/images/flex-printing.png" alt="Digital and flex printing">
+        <div>
+          <span>01</span>
+          <h3>Digital / Flex Printing</h3>
+          <p>Flex, vinyl, star flex, large-format and custom printing.</p>
+        </div>
+      </a>
+
+      <a class="home-feature-card" href="services.html#digital-marketing">
+        <img src="assets/images/digital-marketing.png" alt="Digital marketing">
+        <div>
+          <span>02</span>
+          <h3>Digital Marketing</h3>
+          <p>Social media, reels, content, designs and online advertising.</p>
+        </div>
+      </a>
+
+      <a class="home-feature-card" href="services.html#web-app">
+        <img src="assets/images/web-app.png" alt="Web and app development">
+        <div>
+          <span>03</span>
+          <h3>Web &amp; App Development</h3>
+          <p>Modern websites and mobile apps for growing businesses.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+<section class="home-cta">
+    <span class="eyebrow">READY TO BUILD YOUR BRAND?</span>
+    <h2>LET'S MAKE SOMETHING <strong>PEOPLE REMEMBER.</strong></h2>
+    <p>Tell us what you need and we'll help you choose the right solution.</p>
+    <a class="home-action primary" href="enquiry.html">
+      <span>Start an Enquiry</span>
+      <span class="home-action-arrow">→</span>
+    </a>
+  </section>
+</main>
+
+<footer class="site-footer premium-reference-footer">
+  <div class="footer-main">
+    <div class="footer-about">
+      <a class="footer-brand" href="index.html" aria-label="Sharon Digital Home">
+        <img src="assets/images/logo.png" alt="Sharon Digital logo">
+        <div>
+          <b>SHARON <span>DIGITAL</span></b>
+          <small>ADVERTISING &amp; MARKETING</small>
+        </div>
+      </a>
+
+      <p>PREMIUM QUALITY. AFFORDABLE PRICES.</p>
+    </div>
+
+    <nav class="reference-footer-nav" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="enquiry.html">Enquiry</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="reference-footer-social">
+      <a aria-label="Instagram" href="https://www.instagram.com/sharondigital_in" target="_blank" rel="noopener noreferrer">
+        <img src="assets/images/instagram-logo.png" alt="Instagram">
+      </a>
+      <a aria-label="Facebook" href="https://www.facebook.com/francis.sahayaraj" target="_blank" rel="noopener noreferrer">
+        <img src="assets/images/facebook-logo.png" alt="Facebook">
+      </a>
+      <a aria-label="Send email" href="mailto:sharondigitalvallioor@gmail.com">
+        <img src="assets/images/gmail-logo.png" alt="Email">
+      </a>
+      <a aria-label="Chat on WhatsApp" href="https://wa.me/919361418749" target="_blank" rel="noopener noreferrer">
+        <img src="assets/images/whatsapp-logo.png" alt="WhatsApp">
+      </a>
+    </div>
+
+    <div class="footer-bottom">
+      <small>© 2026 Sharon Digital Advertising and Marketing. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+
+<a class="floatWA" href="https://wa.me/919361418749?text=Hi%20Sharon%20Digital%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <span class="floatWA-icon" aria-hidden="true"><img src="assets/images/whatsapp-logo.png" alt=""></span>
+  <span class="floatWA-label">Chat on WhatsApp</span>
+</a>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
+<style>
+/* PREMIUM NAVBAR BRAND COLORS */
+.home-page .nav .brand span {
+  color: #F5F5F5 !important;
+  font-weight: 800 !important;
+}
+
+.home-page .nav .brand b {
+  color: #E50914 !important;
+}
+
+.home-page .nav .brand small {
+  color: #ffffff !important;
+}
+</style>
+<style>
+/* PREMIUM END CARD */
+.home-page .site-footer {
+  background: #0b0708 !important;
+  color: #f5f5f5 !important;
+  padding: 100px 6vw 30px !important;
+  text-align: center !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-page .site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .25;
+  background-image: radial-gradient(
+    rgba(255,255,255,.12) 1px,
+    transparent 1.4px
+  );
+  background-size: 9px 9px;
+}
+
+.home-page .footer-main {
+  position: relative;
+  z-index: 2;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.home-page .footer-about {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.home-page .footer-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-bottom: 28px;
+  text-decoration: none;
+}
+
+.home-page .footer-brand img {
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: contain;
+}
+
+.home-page .footer-brand b {
+  color: #f5f5f5 !important;
+  font-size: 22px !important;
+  font-weight: 900 !important;
+}
+
+.home-page .footer-brand b span {
+  color: #e50914 !important;
+}
+
+.home-page .footer-brand small {
+  display: block;
+  margin-top: 5px;
+  color: #a6a6a6 !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: .15em;
+}
+
+.home-page .footer-about > p {
+  color: #f5f5f5 !important;
+  font-size: clamp(26px, 3vw, 44px) !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  margin: 0 0 35px !important;
+}
+
+.home-page .footer-links-col,
+.home-page .footer-contact-col {
+  display: none !important;
+}
+
+.home-page .footer-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-top: 35px !important;
+  border: 0 !important;
+}
+
+.home-page .footer-bottom small {
+  color: #8f8a87 !important;
+}
+
+.home-page .footer-bottom span {
+  color: #706b68 !important;
+  font-size: 10px !important;
+  letter-spacing: .08em;
+}
+/* =========================================================
+   CHANGE 2 — EXPLORE OUR SERVICES
+   Clean 3-column alignment + matching image ratio
+   ========================================================= */
+
+.home-page .home-services {
+  padding: 105px 5vw 110px !important;
+  background: #f4f1e9 !important;
+  overflow: hidden !important;
+}
+
+.home-page .home-services .home-section-head {
+  width: min(1708px, 100%) !important;
+  margin: 0 auto 48px !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  gap: 30px !important;
+}
+
+.home-page .home-services .home-section-head > div {
+  min-width: 0 !important;
+}
+
+.home-page .home-services .home-section-head .eyebrow {
+  display: block !important;
+  margin-bottom: 22px !important;
+}
+
+.home-page .home-services .home-section-head h2 {
+  margin: 0 !important;
+  font-size: clamp(48px, 4.2vw, 76px) !important;
+  line-height: .94 !important;
+  letter-spacing: -.055em !important;
+  white-space: nowrap !important;
+}
+
+.home-page .home-services .home-section-head h2 strong {
+  color: #ed1c24 !important;
+}
+
+.home-page .home-services .home-text-link {
+  flex: 0 0 auto !important;
+  margin-bottom: 8px !important;
+  color: #ed1c24 !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+.home-page .home-services .home-featured-grid {
+  width: min(1708px, 100%) !important;
+  margin: 0 auto !important;
+
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+
+  gap: 18px !important;
+  align-items: stretch !important;
+}
+
+.home-page .home-services .home-feature-card {
+  min-width: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  background: #ffffff !important;
+  border: 1px solid rgba(18,10,11,.12) !important;
+
+  text-decoration: none !important;
+  overflow: hidden !important;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease !important;
+}
+
+.home-page .home-services .home-feature-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 45px rgba(18,10,11,.10) !important;
+  border-color: rgba(18,10,11,.20) !important;
+}
+
+/* SAME IMAGE RATIO FOR ALL 3 CARDS */
+.home-page .home-services .home-feature-card > img {
+  display: block !important;
+  width: 100% !important;
+
+  aspect-ratio: 2.05 / 1 !important;
+
+  height: auto !important;
+  min-height: 0 !important;
+
+  object-fit: cover !important;
+  object-position: center !important;
+
+  flex: 0 0 auto !important;
+}
+
+/* CARD CONTENT */
+.home-page .home-services .home-feature-card > div {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+
+  padding: 31px 24px 32px !important;
+  background: #ffffff !important;
+}
+
+.home-page .home-services .home-feature-card > div > span {
+  display: block !important;
+  margin-bottom: 15px !important;
+
+  color: #b38a16 !important;
+  font-size: 11px !important;
+  line-height: 1 !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+}
+
+.home-page .home-services .home-feature-card h3 {
+  margin: 0 !important;
+
+  color: #120a0b !important;
+  font-size: 25px !important;
+  line-height: 1.05 !important;
+  font-weight: 900 !important;
+  letter-spacing: -.035em !important;
+  text-transform: uppercase !important;
+}
+
+.home-page .home-services .home-feature-card p {
+  margin: 17px 0 0 !important;
+
+  color: #66615d !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  font-weight: 500 !important;
+}
+
+/* TABLET */
+@media (max-width: 1000px) {
+  .home-page .home-services {
+    padding: 80px 5vw 90px !important;
+  }
+
+  .home-page .home-services .home-section-head {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    margin-bottom: 35px !important;
+  }
+
+  .home-page .home-services .home-section-head h2 {
+    white-space: normal !important;
+  }
+
+  .home-page .home-services .home-featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .home-page .home-services {
+    padding: 70px 6vw 80px !important;
+  }
+
+  .home-page .home-services .home-section-head {
+    margin-bottom: 28px !important;
+  }
+
+  .home-page .home-services .home-section-head h2 {
+    font-size: clamp(38px, 11vw, 56px) !important;
+  }
+
+  .home-page .home-services .home-featured-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .home-page .home-services .home-feature-card > img {
+    aspect-ratio: 2.05 / 1 !important;
+  }
+
+  .home-page .home-services .home-feature-card h3 {
+    font-size: 23px !important;
+  }
+}
+/* =========================================================
+   CHANGE 3 — HOME CTA ALIGNMENT
+   ========================================================= */
+
+.home-page .home-cta {
+  position: relative !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+
+  padding: 105px 5vw 100px !important;
+  margin: 0 !important;
+
+  overflow: hidden !important;
+  background: #f4f1e9 !important;
+}
+
+.home-page .home-cta .eyebrow {
+  display: block !important;
+  margin: 0 0 25px !important;
+
+  color: #3f3a38 !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  font-weight: 800 !important;
+  letter-spacing: .22em !important;
+}
+
+.home-page .home-cta h2 {
+  position: relative !important;
+  z-index: 2 !important;
+
+  width: min(1350px, 100%) !important;
+  max-width: 1350px !important;
+
+  margin: 0 !important;
+
+  font-size: clamp(52px, 6vw, 105px) !important;
+  line-height: .9 !important;
+  letter-spacing: -.065em !important;
+  font-weight: 900 !important;
+
+  color: #120a0b !important;
+  text-transform: uppercase !important;
+
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+.home-page .home-cta h2 strong {
+  color: #ed1c24 !important;
+}
+
+.home-page .home-cta p {
+  position: relative !important;
+  z-index: 2 !important;
+
+  margin: 30px 0 0 !important;
+
+  color: #292526 !important;
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  font-weight: 500 !important;
+}
+
+.home-page .home-cta .home-action {
+  position: relative !important;
+  z-index: 2 !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+
+  margin-top: 28px !important;
+  padding: 14px 0 !important;
+
+  color: #120a0b !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+
+  text-decoration: none !important;
+}
+
+.home-page .home-cta .home-action-arrow {
+  font-size: 18px !important;
+  transition: transform .25s ease !important;
+}
+
+.home-page .home-cta .home-action:hover .home-action-arrow {
+  transform: translateX(5px) !important;
+}
+
+/* Decorative dotted block on the right */
+.home-page .home-cta::after {
+  content: "" !important;
+  position: absolute !important;
+
+  width: 100px !important;
+  height: 100px !important;
+
+  right: 8vw !important;
+  top: 42% !important;
+
+  background-image: radial-gradient(
+    #ed1c24 1.2px,
+    transparent 1.5px
+  ) !important;
+
+  background-size: 8px 8px !important;
+  opacity: .22 !important;
+
+  pointer-events: none !important;
+}
+
+/* TABLET */
+@media (max-width: 1000px) {
+  .home-page .home-cta {
+    padding: 85px 6vw 85px !important;
+  }
+
+  .home-page .home-cta h2 {
+    width: 100% !important;
+    max-width: 900px !important;
+    font-size: clamp(48px, 8vw, 78px) !important;
+  }
+
+  .home-page .home-cta::after {
+    right: 5vw !important;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .home-page .home-cta {
+    padding: 70px 6vw 75px !important;
+  }
+
+  .home-page .home-cta h2 {
+    font-size: clamp(42px, 12vw, 68px) !important;
+    line-height: .92 !important;
+  }
+
+  .home-page .home-cta p {
+    font-size: 15px !important;
+  }
+
+  .home-page .home-cta::after {
+    width: 65px !important;
+    height: 65px !important;
+    right: 5vw !important;
+    top: 52% !important;
+  }
+}
+/* =========================================================
+   PREMIUM SECTION SEPARATORS
+   ========================================================= */
+
+/* HERO → EXPERIENCE */
+.home-page .home-hero {
+  border-bottom: 1px solid #d8d5ce;
+}
+
+/* EXPERIENCE SECTION */
+.home-page .home-intro {
+  background: #f4f1e9;
+  border-bottom: 1px solid #d8d5ce;
+}
+
+/* EXPERIENCE → SERVICES */
+.home-page .home-services {
+  background: #eeebe4;
+  border-bottom: 1px solid #d8d5ce;
+}
+
+/* SERVICES → CTA */
+.home-page .home-cta {
+  background: #f4f1e9;
+  border-bottom: 1px solid #d8d5ce;
+}
+
+/* CTA → END CARD */
+.home-page .site-footer {
+  border-top: 1px solid #d8d5ce;
+}
+
+/* subtle section accent line */
+.home-page .home-intro::after,
+.home-page .home-services::before,
+.home-page .home-cta::before {
+  content: "";
+  position: absolute;
+  width: 55px;
+  height: 2px;
+  background: #ed1c24;
+}
+
+/* Keep the sections visually tight */
+.home-page .home-intro {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.home-page .home-services {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.home-page .home-cta {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+/* =========================================================
+   EXPLORE OUR SERVICES — VISIBLE DOTTED BACKGROUND
+   ========================================================= */
+
+.home-page .home-services {
+  position: relative !important;
+  overflow: hidden !important;
+  background-color: #eeebe4 !important;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(18, 10, 11, 0.02) 1.2px,
+    transparent 1.3px
+  ) !important;
+
+  background-size: 10px 10px !important;
+  background-position: 0 0 !important;
+}
+
+/* Keep content above the dots */
+.home-page .home-services > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Make sure the dots cover the whole section */
+.home-page .home-services::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(18, 10, 11, 0.02) 1.1px,
+    transparent 1.3px
+  ) !important;
+
+  background-size: 10px 10px !important;
+}
+
+/* Creamy white CTA */
+.home-page .home-cta {
+  background: #faf8f2 !important;
+}
+/* BUILT ON EXPERIENCE — WHITE BACKGROUND */
+.home-page .home-intro {
+  background: #f8f6f0 !important;
+}
+.home-page .home-trust-strip {
+grid-template-columns: repeat(3, 1fr) !important;
+  gap: 30px !important;
+  align-items: start !important;
+}
+
+.home-page .home-trust-strip > div {
+  min-width: 0;
+  text-align: left;
+}
+
+.home-page .home-trust-strip > div {
+  min-width: 0;
+}
+
+.home-page .home-trust-strip strong {
+  white-space: nowrap;
+}
+/* FIX SECTION SPACING + ALIGNMENT */
+.home-page .home-intro {
+  padding: 90px 7vw 70px !important;
+}
+
+.home-page .home-trust-strip {
+  margin-top: 35px !important;
+  padding-top: 24px !important;
+}
+
+.home-page .home-services {
+  padding-top: 85px !important;
+  padding-bottom: 90px !important;
+  border-top: 1px solid rgba(18,10,11,.08);
+}
+
+.home-page .home-section-head {
+  margin-bottom: 38px !important;
+}
+</style>

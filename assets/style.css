@@ -6779,3 +6779,390 @@ a.floatWA:focus-visible .floatWA-label {
 .home-page .home-stat:last-child::after {
   display: none !important;
 }
+/* =========================================================
+   UNIVERSAL FLUID RESPONSIVE SYSTEM
+   Keeps the desktop design intact and makes every layout
+   scale naturally across phones, tablets and small laptops.
+========================================================= */
+
+html { -webkit-text-size-adjust: 100%; }
+*, *::before, *::after { box-sizing: border-box; }
+img, video, canvas, svg { max-width: 100%; }
+button, input, textarea, select { max-width: 100%; }
+
+/* Fluid page gutters: 16px on phones -> 5vw on desktop */
+:root {
+  --fluid-gutter: clamp(16px, 5vw, 72px);
+  --fluid-section-y: clamp(52px, 7vw, 110px);
+  --fluid-card-gap: clamp(14px, 2vw, 32px);
+}
+
+/* Never let a component create horizontal page overflow */
+body { overflow-x: hidden; }
+
+@media (max-width: 1100px) {
+  .hero,
+  .pageHero,
+  .section,
+  section {
+    padding-left: var(--fluid-gutter);
+    padding-right: var(--fluid-gutter);
+  }
+
+  .heroLayout { gap: clamp(20px, 4vw, 48px); }
+
+  .hero h1,
+  .pageHero h1 {
+    font-size: clamp(40px, 7vw, 76px);
+  }
+
+  .serviceBlock {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    height: auto;
+    min-height: clamp(420px, 48vw, 520px);
+  }
+
+  .serviceCover { height: auto; min-height: inherit; }
+  .serviceItems { height: auto; min-height: inherit; padding: clamp(22px, 3vw, 35px); }
+  .coverTitle { padding: clamp(22px, 3vw, 38px); }
+  .coverTitle h2 { font-size: clamp(32px, 4.5vw, 52px); }
+}
+
+@media (max-width: 800px) {
+  /* Header / navigation */
+  .nav {
+    padding-left: var(--fluid-gutter) !important;
+    padding-right: var(--fluid-gutter) !important;
+  }
+
+  /* Hero becomes one predictable fluid column */
+  .hero {
+    min-height: clamp(590px, 145vw, 720px) !important;
+    height: auto !important;
+    padding-top: clamp(54px, 12vw, 90px) !important;
+    padding-bottom: clamp(54px, 12vw, 90px) !important;
+  }
+
+  .heroLayout {
+    grid-template-columns: 1fr !important;
+    gap: clamp(28px, 8vw, 56px) !important;
+    align-items: center !important;
+  }
+
+  .heroContent {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 11.5vw, 62px) !important;
+    line-height: .92 !important;
+    max-width: 100% !important;
+    overflow-wrap: anywhere;
+  }
+
+  .heroLead {
+    max-width: 100% !important;
+    font-size: clamp(13px, 3.5vw, 15px) !important;
+    line-height: 1.6 !important;
+  }
+
+  .actions {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .actions .btn {
+    min-height: 46px;
+    padding: 12px clamp(16px, 5vw, 22px);
+  }
+
+  .heroBrandLockup {
+    justify-self: center !important;
+    width: 100% !important;
+    max-width: 560px !important;
+  }
+
+  .logoGlossWrap {
+    width: min(100%, clamp(240px, 72vw, 430px)) !important;
+  }
+
+  /* All major grids collapse cleanly */
+  .serviceBlock,
+  .home-featured-grid,
+  .contactCards,
+  .formGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .serviceBlock {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .serviceCover {
+    height: clamp(250px, 68vw, 390px) !important;
+    min-height: 0 !important;
+  }
+
+  .serviceItems {
+    min-height: 0 !important;
+    height: auto !important;
+    grid-template-columns: 1fr !important;
+    padding: clamp(18px, 5vw, 30px) !important;
+  }
+
+  .serviceItem {
+    min-height: 0 !important;
+    padding: clamp(13px, 4vw, 18px) 0 !important;
+    gap: 12px !important;
+  }
+
+  .coverTitle h2 {
+    font-size: clamp(30px, 9vw, 48px) !important;
+    line-height: .95 !important;
+  }
+
+  .coverTitle p { max-width: 100%; }
+
+  /* Page heroes */
+  .pageHero {
+    min-height: clamp(360px, 75vw, 560px) !important;
+    padding-top: clamp(42px, 10vw, 80px) !important;
+    padding-bottom: clamp(42px, 10vw, 80px) !important;
+  }
+
+  .pageHero h1 {
+    font-size: clamp(42px, 12vw, 72px) !important;
+    max-width: 100% !important;
+  }
+
+  .pageHero p { max-width: 100%; }
+
+  /* Generic content blocks */
+  .home-copy,
+  .home-visual,
+  .home-intro-copy,
+  .home-intro-list,
+  .home-feature-card,
+  .contactCard,
+  .formWrap {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .home-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .gallery-grid,
+  .portfolio-preview-four {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  /* Footer navigation can wrap instead of pushing the page sideways */
+  .premium-reference-footer .reference-footer-nav {
+    width: 100% !important;
+    gap: clamp(12px, 4vw, 24px) !important;
+    flex-wrap: wrap !important;
+  }
+
+  .premium-reference-footer .footer-about > p {
+    width: 100% !important;
+    max-width: 720px !important;
+    font-size: clamp(25px, 7.5vw, 40px) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero,
+  .pageHero,
+  .section,
+  section { padding-left: 16px; padding-right: 16px; }
+
+  .hero { min-height: clamp(560px, 155vw, 660px) !important; }
+
+  .hero h1 { font-size: clamp(34px, 12.5vw, 52px) !important; }
+  .eyebrow { font-size: 10px !important; letter-spacing: 2px !important; }
+
+  .actions .btn {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .heroBrandLockup { margin-top: 4px; }
+  .logoGlossWrap { width: min(88vw, 340px) !important; }
+
+  .home-stats,
+  .gallery-grid,
+  .portfolio-preview-four {
+    grid-template-columns: 1fr !important;
+  }
+
+  .serviceCover { height: clamp(220px, 65vw, 300px) !important; }
+  .coverTitle { padding: 22px !important; }
+  .coverTitle h2 { font-size: clamp(28px, 10vw, 40px) !important; }
+
+  .premium-reference-footer {
+    padding: clamp(64px, 15vw, 82px) 16px 34px !important;
+  }
+
+  .premium-reference-footer .footer-brand img {
+    width: clamp(48px, 14vw, 58px) !important;
+    height: clamp(48px, 14vw, 58px) !important;
+  }
+
+  .premium-reference-footer .footer-brand b {
+    font-size: clamp(17px, 5vw, 21px) !important;
+  }
+
+  .premium-reference-footer .footer-about > p {
+    font-size: clamp(24px, 8.5vw, 32px) !important;
+  }
+
+  .premium-reference-footer .reference-footer-social {
+    gap: 10px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .premium-reference-footer .reference-footer-social a {
+    width: clamp(44px, 14vw, 52px) !important;
+    height: clamp(44px, 14vw, 52px) !important;
+  }
+}
+
+/* Prevent long text / URLs / labels from breaking the viewport */
+h1, h2, h3, h4, h5, h6, p, a, li, span, label, button {
+  overflow-wrap: anywhere;
+}
+
+/* Exceptions for compact UI labels */
+.btn, .nav a, .reference-footer-nav a { overflow-wrap: normal; }
+
+
+/* =========================================================
+   FINAL MOBILE NAV FIX — keep desktop navbar unchanged
+   ========================================================= */
+@media (max-width: 800px) {
+  header.nav {
+    position: sticky !important;
+    z-index: 99999 !important;
+    overflow: visible !important;
+  }
+
+  /* Hamburger: exactly 3 lines when closed */
+  header.nav .menu {
+    display: block !important;
+    position: relative !important;
+    width: 42px !important;
+    height: 42px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: transparent !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    text-indent: -9999px !important;
+    overflow: visible !important;
+    transform: none !important;
+  }
+
+  header.nav .menu::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 10px !important;
+    top: 13px !important;
+    width: 22px !important;
+    height: 2px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    box-shadow: 0 7px 0 #fff, 0 14px 0 #fff !important;
+    transform: none !important;
+    transition: transform .25s ease, box-shadow .25s ease, top .25s ease !important;
+  }
+
+  header.nav .menu::after {
+    content: none !important;
+  }
+
+  /* Open: clean X */
+  header.nav .menu.is-open {
+    transform: none !important;
+  }
+
+  header.nav .menu.is-open::before {
+    top: 20px !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    transform: rotate(45deg) !important;
+  }
+
+  header.nav .menu.is-open::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    left: 10px !important;
+    top: 20px !important;
+    width: 22px !important;
+    height: 2px !important;
+    background: #fff !important;
+    transform: rotate(-45deg) !important;
+  }
+
+  /* Mobile dropdown: links stay inside the panel */
+  header.nav nav {
+    display: none !important;
+    position: absolute !important;
+    top: calc(100% + 9px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 5px !important;
+    overflow: hidden !important;
+    z-index: 100000 !important;
+    background: rgba(8, 9, 10, .98) !important;
+    border: 1px solid rgba(255,255,255,.08) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 18px 35px rgba(0,0,0,.25) !important;
+    backdrop-filter: blur(14px) !important;
+  }
+
+  header.nav nav.open {
+    display: flex !important;
+  }
+
+  header.nav nav a {
+    display: flex !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 44px !important;
+    margin: 0 !important;
+    padding: 11px 14px !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    box-sizing: border-box !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+  }
+
+  /* Keep page content behind the open mobile menu */
+  header.nav + *,
+  main,
+  .hero {
+    position: relative;
+    z-index: 1;
+  }
+}

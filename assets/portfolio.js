@@ -82,7 +82,7 @@
             <p>${esc(category.description)}</p>
           </div>
           <div class="portfolio-actions">
-            <a class="portfolio-whatsapp" href="https://wa.me/919361418749?text=${encodeURIComponent('Hi Sharon Digital, I would like to enquire about ' + category.title + '.') }" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="portfolio-whatsapp" href="https://wa.me/919659331000?text=${encodeURIComponent('Hi Sharon Digital, I would like to enquire about ' + category.title + '.') }" target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </div>
         </div>
         <div class="portfolio-collapse-content">

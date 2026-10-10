@@ -1,4 +1,4 @@
-const WA = '919361418749';
+const WA = '919659331000'; // WhatsApp number without '+' or '00' or any other prefix
 
 const cats = [
   {

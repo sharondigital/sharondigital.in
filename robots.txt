@@ -1,5 +1,4 @@
-
 User-agent: *
 Allow: /
 
-Sitemap: https://sharondigital.in/sitemap.xml
+Sitemap: https://www.sharondigital.in/sitemap.xml
